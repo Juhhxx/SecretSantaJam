@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.gasgiant.camera-shake": {
+      "version": "https://github.com/gasgiant/Camera-Shake.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ab8159a3f352235d2eb7f1c604d2a199700a643a"
+    },
+    "com.qiaozhilei.easy-text-effects": {
+      "version": "https://github.com/LeiQiaoZhi/Easy-Text-Effect.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "hash": "0e500390d9e1f46adb40b8cc2d5c80cedafdb1a3"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,
