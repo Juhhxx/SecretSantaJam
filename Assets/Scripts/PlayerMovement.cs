@@ -27,8 +27,6 @@ public class PlayerMovement : MonoBehaviour
         _moveDelta.x = Input.GetAxis("Horizontal" + _playerNum);
         _moveDelta.y = Input.GetAxis("Vertical" + _playerNum);
 
-        // Calculate base velocity from input
-        _baseVelocity.x = _velocity * _moveDelta.x;
-        _baseVelocity.y = _velocity * _moveDelta.y;
+        _baseVelocity = Vector3.Normalize(_moveDelta) * _velocity;
     }
 }
