@@ -1,15 +1,16 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Barricade : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject _barricadePrefab;
+    [SerializeField] private Vector2 _distanceFromPlayer;
+    public void BuildWall(Vector2 directionAimed)
     {
-        
-    }
+        GameObject instantiatedWall = Instantiate(_barricadePrefab, directionAimed + _distanceFromPlayer, quaternion.identity);
 
-    // Update is called once per frame
-    void Update()
+    }
+    private void BreakWall()
     {
         
     }
