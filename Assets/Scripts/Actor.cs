@@ -11,6 +11,13 @@ public class Actor : MonoBehaviour
     [Min(0)]
     public int teamID;
 
+    public bool IsTurn
+    {
+        get
+        {
+            return TurnManager.instance.CurrentActor == this;
+        }
+    }
     private void OnEnable()
     {
         TurnManager.instance.EnqueueActor(this);
