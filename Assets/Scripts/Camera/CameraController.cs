@@ -1,0 +1,60 @@
+using System;
+using NaughtyAttributes;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+    [SerializeField] private GameVariableSettings _settings;
+
+    public Transform Target;
+    private bool onTarget = false;
+
+    private void Awake()
+    {
+        if (_settings == null)
+        {
+            _settings = ScriptableObject.CreateInstance<GameVariableSettings>();
+        }
+    }
+
+    private void OnEnable()
+    {
+        TurnManager.instance.TurnChangeCallback += FocusActor;
+    }
+
+    private void OnDisable()
+    {
+        if (TurnManager.instance != null)
+            TurnManager.instance.TurnChangeCallback -= FocusActor;
+    }
+
+    // Force camera position on target
+    public void ForceToTarget(Actor a)
+    {
+        FocusActor(a);
+        Vector3 position = Target.position;
+        position.z = transform.position.z;
+        transform.position = position;
+        onTarget = true;
+    }
+
+    public void FocusActor(Actor a)
+    {
+        if (a == null)
+        {
+            return;
+        }
+
+        onTarget = false;
+        Target = a.gameObject.transform;
+        Vector2 targetPos = Target.position;
+        if (LeanTween.isTweening(gameObject))
+        {
+            LeanTween.cancel(gameObject);
+        }
+        transform.LeanMove(targetPos, _settings.CameraTurnFollowTime).
+            setEaseInCubic().
+            setEaseOutCubic()
+            .setOnComplete(() => onTarget = true);
+    }
+}

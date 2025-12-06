@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "ab8159a3f352235d2eb7f1c604d2a199700a643a"
     },
+    "com.h8man.2d.navmeshplus": {
+      "version": "https://github.com/h8man/NavMeshPlus.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3fdf1984803c4518eafea98fcb416c8a3aa09f26"
+    },
     "com.qiaozhilei.easy-text-effects": {
       "version": "https://github.com/LeiQiaoZhi/Easy-Text-Effect.git",
       "depth": 0,
