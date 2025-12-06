@@ -32,9 +32,11 @@ public class MatchManager : MonoBehaviour
     private void TurnChange(Actor newActor)
     {
         _actor = newActor;
+        _breakSkipInput = true;
     }
 
     private Actor _actor;
+    private bool _breakSkipInput = false;
 
     private void Update()
     {
@@ -45,6 +47,12 @@ public class MatchManager : MonoBehaviour
         if (inputTeam <= 1)
         {
             bool skipTurn = Input.GetButton("Jump" + inputTeam);
+            if (!skipTurn)
+            {
+                _breakSkipInput = false;
+            }
+
+            skipTurn = skipTurn && !_breakSkipInput;
 
             if (skipTurn)
             {
