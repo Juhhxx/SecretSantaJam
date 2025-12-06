@@ -6,6 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private int _maxHP;
 
+    [ProgressBar("_maxHP", EColor.Red)]
     [SerializeField, ReadOnly] private float _currentHP;
     public float CurrentHP
     {

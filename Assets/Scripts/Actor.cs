@@ -4,6 +4,8 @@ using UnityEngine;
 // Base game actor, any object with this can interact with the turn manager
 public class Actor : MonoBehaviour
 {
+    public event Action OnStartTurn;
+    public event Action OnEndTurn;
     [Min(0)]
     public int initiative;
     [Min(0)]
@@ -29,5 +31,15 @@ public class Actor : MonoBehaviour
         {
             
         }
+    }
+
+    public void StartTurn()
+    {
+        
+    }
+
+    public void EndTurn()
+    {
+        
     }
 }
