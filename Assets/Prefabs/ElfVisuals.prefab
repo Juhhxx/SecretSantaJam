@@ -610,9 +610,9 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 3
+  WavingSpeed: 2
   WavingRange: 0.8
-  WavingAxis: {x: 1, y: 1, z: 1}
+  WavingAxis: {x: 1, y: 0, z: 1}
   WavingType: 1
   AlternateWave: 1
   UseWind: 0
@@ -629,22 +629,86 @@ MonoBehaviour:
   _editor_IsInspectorViewingColliders: 0
   _editor_IsInspectorViewingIncludedColliders: 0
   _editor_animatorViewedCounter: 1
-  TailSegments: []
-  GhostParent:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
-    TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
-    PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
-    BlendValue: 1
-    BoneDimensionsScaled: {x: 0, y: 0, z: 0}
-    BoneLengthScaled: 0
-    InitialLocalPosition: {x: 0, y: 0, z: 0}
+  TailSegments:
+  - ProceduralPosition: {x: -3.504, y: -0.11799991, z: 0}
+    ProceduralPositionWeightBlended: {x: -3.504, y: -0.11799991, z: 0}
+    TrueTargetRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PosRefRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PreviousPosReferenceRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PreviousPosition: {x: -3.504, y: -0.11799991, z: 0}
+    BlendValue: 0.30419794
+    BoneDimensionsScaled: {x: -0.2739999, y: 0.067000024, z: 0}
+    BoneLengthScaled: 0.2820726
+    InitialLocalPosition: {x: -0.274, y: 0.067, z: 0}
     InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
     InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
     LocalOffset: {x: 0, y: 0, z: 0}
     InitialLocalRotation: {x: 0, y: 0, z: 0, w: 1}
+    ColliderRadius: 0.35117483
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: 0, y: 0, z: 0}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
+    PreviousPush: {x: 0, y: 0, z: 0}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    LastKeyframeLocalPosition: {x: -0.27399993, y: 0.06700003, z: 0}
+  - ProceduralPosition: {x: -3.6477573, y: -0.3122709, z: 0.013117826}
+    ProceduralPositionWeightBlended: {x: -3.6482155, y: -0.31193593, z: 0.013053751}
+    TrueTargetRotation: {x: -0.41761342, y: 0.90647954, z: -0.062308066, w: 0.003424678}
+    PosRefRotation: {x: -0.41871282, y: 0.9060163, z: -0.061689615, w: 0.002921365}
+    PreviousPosReferenceRotation: {x: -0.4209373, y: 0.9050805, z: -0.06030939, w: 0.0019754109}
+    PreviousPosition: {x: -3.6468194, y: -0.31294397, z: 0.013377064}
+    BlendValue: 0.30419794
+    BoneDimensionsScaled: {x: -0.142, y: -0.19599995, z: 0}
+    BoneLengthScaled: 0.24203302
+    InitialLocalPosition: {x: -0.14200002, y: -0.19599998, z: 0}
+    InitialLocalPositionInRoot: {x: -0.14200002, y: -0.19599998, z: 0}
+    InitialLocalRotationInRoot: {x: -0.423156, y: 0.9060569, z: 0, w: 0}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: -0.423156, y: 0.9060569, z: -0, w: 0}
+    ColliderRadius: 0.26338112
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: -0.038928248, y: 0.028133724, z: -0.009279672}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 0}
+    PreviousPush: {x: -0.00071263313, y: 0.0005174279, z: -0.00004727114}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: -0.423156, y: 0.9060569, z: -0, w: 0}
+    LastKeyframeLocalPosition: {x: -0.14200002, y: -0.19599998, z: 0}
+  GhostParent:
+    ProceduralPosition: {x: -3.23, y: -0.18499994, z: 0}
+    ProceduralPositionWeightBlended: {x: -3.23, y: -0.18499994, z: 0}
+    TrueTargetRotation: {x: -0, y: -0, z: -0, w: 1}
+    PosRefRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosReferenceRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosition: {x: -3.23, y: -0.18499994, z: 0}
+    BlendValue: 1
+    BoneDimensionsScaled: {x: 0, y: 0, z: 0}
+    BoneLengthScaled: 0
+    InitialLocalPosition: {x: 0, y: 0.050014928, z: 0}
+    InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
+    InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: -0, y: -0, z: -0, w: 1}
     ColliderRadius: 1
     CollisionContactFlag: 0
     CollisionContactRelevancy: -1
@@ -664,16 +728,16 @@ MonoBehaviour:
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
   GhostChild:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
+    ProceduralPosition: {x: -3.6474402, y: -0.3125012, z: 0.01316199}
+    ProceduralPositionWeightBlended: {x: -3.648119, y: -0.312006, z: 0.013067185}
     TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
     PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
     PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
-    BlendValue: 1
+    PreviousPosition: {x: -3.6465228, y: -0.31315732, z: 0.013417057}
+    BlendValue: 0.30419794
     BoneDimensionsScaled: {x: 0, y: 0, z: 0}
     BoneLengthScaled: 0
-    InitialLocalPosition: {x: 0, y: 0, z: 0}
+    InitialLocalPosition: {x: 0.32017663, y: -0.067043334, z: 0}
     InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
     InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
     LocalOffset: {x: 0, y: 0, z: 0}
@@ -681,18 +745,18 @@ MonoBehaviour:
     ColliderRadius: 1
     CollisionContactFlag: 0
     CollisionContactRelevancy: -1
-    VelocityHelper: {x: 0, y: 0, z: 0}
-    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPush: {x: 0, y: 0, z: 0}
+    VelocityHelper: {x: -0.030261235, y: 0.021707593, z: -0.008003048}
+    QVelocityHelper: {x: 0.08794623, y: 0.037093107, z: -0.05026606, w: 0.039831005}
+    PreviousPush: {x: -0.00086402893, y: 0.00062841177, z: 0.0000013150275}
     Curving: {x: 0, y: 0, z: 0, w: 1}
     Gravity: {x: 0, y: 0, z: 0}
     GravityLookOffset: {x: 0, y: 0, z: 0}
     LengthMultiplier: 1
-    PositionSpeed: 1
-    RotationSpeed: 1
-    Springiness: 0
-    Slithery: 1
-    Curling: 0.5
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
     Slippery: 1
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
@@ -732,42 +796,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DeflectOnlyCollisions: 1
-  _Editor_Category: 0
+  _Editor_Category: 2
   _Editor_FeaturesCategory: 0
   DrawGizmos: 1
   StartBone: {fileID: 0}
   EndBone: {fileID: 0}
   EndBoneJointOffset: {x: 0, y: 0, z: 0}
-  _TransformsGhostChain:
-  - {fileID: 1512850130558246003}
-  - {fileID: 6942689018329485523}
+  _TransformsGhostChain: []
   _GhostChainInitCount: 2
   UpdateRate: 0
   AnimatePhysics: 0
   InterpolateRate: 0
   Prewarm: 0
-  Slithery: 1
-  Curling: 0.5
-  Springiness: 0
+  Slithery: 1.2
+  Curling: 0
+  Springiness: 0.28
   MaxStretching: 0.375
   AngleLimit: 181
   AngleLimitAxis: {x: 0, y: 0, z: 0}
   LimitAxisRange: {x: 0, y: 0}
   LimitSmoothing: 0.5
-  MotionInfluence: 1
+  MotionInfluence: 0.44637427
   MotionInfluenceInY: 1
   IncludeParent: 1
   UnifyBendiness: 0
-  ReactionSpeed: 0.9
-  Sustain: 0
-  RotationRelevancy: 1
+  ReactionSpeed: 0.3
+  Sustain: 0.213
+  RotationRelevancy: 0.744
   SmoothingStyle: 1
-  DeltaType: 4
+  DeltaType: 3
   UpdateAsLast: 1
   DetectZeroKeyframes: 1
   StartAfterTPose: 1
   OptimizeWithMesh: {fileID: 0}
-  TailAnimatorAmount: 1
+  TailAnimatorAmount: 0.30419794
   DetachChildren: 0
   Axis2D: 3
   Tangle: 0
@@ -1235,9 +1297,9 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 3
+  WavingSpeed: 2
   WavingRange: 0.8
-  WavingAxis: {x: 1, y: 1, z: 1}
+  WavingAxis: {x: 1, y: 0, z: 1}
   WavingType: 1
   AlternateWave: 1
   UseWind: 0
@@ -1254,22 +1316,86 @@ MonoBehaviour:
   _editor_IsInspectorViewingColliders: 0
   _editor_IsInspectorViewingIncludedColliders: 0
   _editor_animatorViewedCounter: 1
-  TailSegments: []
-  GhostParent:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
-    TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
-    PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
-    BlendValue: 1
-    BoneDimensionsScaled: {x: 0, y: 0, z: 0}
-    BoneLengthScaled: 0
-    InitialLocalPosition: {x: 0, y: 0, z: 0}
+  TailSegments:
+  - ProceduralPosition: {x: -3.504, y: -0.11799991, z: 0}
+    ProceduralPositionWeightBlended: {x: -3.504, y: -0.11799991, z: 0}
+    TrueTargetRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PosRefRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PreviousPosReferenceRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    PreviousPosition: {x: -3.504, y: -0.11799991, z: 0}
+    BlendValue: 0.30419794
+    BoneDimensionsScaled: {x: -0.2739999, y: 0.067000024, z: 0}
+    BoneLengthScaled: 0.2820726
+    InitialLocalPosition: {x: -0.274, y: 0.067, z: 0}
     InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
     InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
     LocalOffset: {x: 0, y: 0, z: 0}
     InitialLocalRotation: {x: 0, y: 0, z: 0, w: 1}
+    ColliderRadius: 0.35117483
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: 0, y: 0, z: 0}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
+    PreviousPush: {x: 0, y: 0, z: 0}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: -0.055005476, y: -0.029468983, z: -0.005200737, w: 0.9980376}
+    LastKeyframeLocalPosition: {x: -0.27399993, y: 0.06700003, z: 0}
+  - ProceduralPosition: {x: -3.6477573, y: -0.3122709, z: 0.013117826}
+    ProceduralPositionWeightBlended: {x: -3.6482155, y: -0.31193593, z: 0.013053751}
+    TrueTargetRotation: {x: -0.41761342, y: 0.90647954, z: -0.062308066, w: 0.003424678}
+    PosRefRotation: {x: -0.41871282, y: 0.9060163, z: -0.061689615, w: 0.002921365}
+    PreviousPosReferenceRotation: {x: -0.4209373, y: 0.9050805, z: -0.06030939, w: 0.0019754109}
+    PreviousPosition: {x: -3.6468194, y: -0.31294397, z: 0.013377064}
+    BlendValue: 0.30419794
+    BoneDimensionsScaled: {x: -0.142, y: -0.19599995, z: 0}
+    BoneLengthScaled: 0.24203302
+    InitialLocalPosition: {x: -0.14200002, y: -0.19599998, z: 0}
+    InitialLocalPositionInRoot: {x: -0.14200002, y: -0.19599998, z: 0}
+    InitialLocalRotationInRoot: {x: -0.423156, y: 0.9060569, z: 0, w: 0}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: -0.423156, y: 0.9060569, z: -0, w: 0}
+    ColliderRadius: 0.26338112
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: -0.038928248, y: 0.028133724, z: -0.009279672}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 0}
+    PreviousPush: {x: -0.00071263313, y: 0.0005174279, z: -0.00004727114}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: -0.423156, y: 0.9060569, z: -0, w: 0}
+    LastKeyframeLocalPosition: {x: -0.14200002, y: -0.19599998, z: 0}
+  GhostParent:
+    ProceduralPosition: {x: -3.23, y: -0.18499994, z: 0}
+    ProceduralPositionWeightBlended: {x: -3.23, y: -0.18499994, z: 0}
+    TrueTargetRotation: {x: -0, y: -0, z: -0, w: 1}
+    PosRefRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosReferenceRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosition: {x: -3.23, y: -0.18499994, z: 0}
+    BlendValue: 1
+    BoneDimensionsScaled: {x: 0, y: 0, z: 0}
+    BoneLengthScaled: 0
+    InitialLocalPosition: {x: 0, y: 0.050014928, z: 0}
+    InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
+    InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: -0, y: -0, z: -0, w: 1}
     ColliderRadius: 1
     CollisionContactFlag: 0
     CollisionContactRelevancy: -1
@@ -1289,16 +1415,16 @@ MonoBehaviour:
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
   GhostChild:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
+    ProceduralPosition: {x: -3.6474402, y: -0.3125012, z: 0.01316199}
+    ProceduralPositionWeightBlended: {x: -3.648119, y: -0.312006, z: 0.013067185}
     TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
     PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
     PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
-    BlendValue: 1
+    PreviousPosition: {x: -3.6465228, y: -0.31315732, z: 0.013417057}
+    BlendValue: 0.30419794
     BoneDimensionsScaled: {x: 0, y: 0, z: 0}
     BoneLengthScaled: 0
-    InitialLocalPosition: {x: 0, y: 0, z: 0}
+    InitialLocalPosition: {x: 0.32017663, y: -0.067043334, z: 0}
     InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
     InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
     LocalOffset: {x: 0, y: 0, z: 0}
@@ -1306,18 +1432,18 @@ MonoBehaviour:
     ColliderRadius: 1
     CollisionContactFlag: 0
     CollisionContactRelevancy: -1
-    VelocityHelper: {x: 0, y: 0, z: 0}
-    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPush: {x: 0, y: 0, z: 0}
+    VelocityHelper: {x: -0.030261235, y: 0.021707593, z: -0.008003048}
+    QVelocityHelper: {x: 0.08794623, y: 0.037093107, z: -0.05026606, w: 0.039831005}
+    PreviousPush: {x: -0.00086402893, y: 0.00062841177, z: 0.0000013150275}
     Curving: {x: 0, y: 0, z: 0, w: 1}
     Gravity: {x: 0, y: 0, z: 0}
     GravityLookOffset: {x: 0, y: 0, z: 0}
     LengthMultiplier: 1
-    PositionSpeed: 1
-    RotationSpeed: 1
-    Springiness: 0
-    Slithery: 1
-    Curling: 0.5
+    PositionSpeed: 0.3
+    RotationSpeed: 0.744
+    Springiness: 0.28
+    Slithery: 1.2
+    Curling: 0
     Slippery: 1
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
@@ -1357,42 +1483,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DeflectOnlyCollisions: 1
-  _Editor_Category: 0
+  _Editor_Category: 2
   _Editor_FeaturesCategory: 0
   DrawGizmos: 1
   StartBone: {fileID: 0}
   EndBone: {fileID: 0}
   EndBoneJointOffset: {x: 0, y: 0, z: 0}
-  _TransformsGhostChain:
-  - {fileID: 7764511751136519524}
-  - {fileID: 6510011777836137393}
+  _TransformsGhostChain: []
   _GhostChainInitCount: 2
   UpdateRate: 0
   AnimatePhysics: 0
   InterpolateRate: 0
   Prewarm: 0
-  Slithery: 1
-  Curling: 0.5
-  Springiness: 0
+  Slithery: 1.2
+  Curling: 0
+  Springiness: 0.28
   MaxStretching: 0.375
   AngleLimit: 181
   AngleLimitAxis: {x: 0, y: 0, z: 0}
   LimitAxisRange: {x: 0, y: 0}
   LimitSmoothing: 0.5
-  MotionInfluence: 1
+  MotionInfluence: 0.44637427
   MotionInfluenceInY: 1
   IncludeParent: 1
   UnifyBendiness: 0
-  ReactionSpeed: 0.9
-  Sustain: 0
-  RotationRelevancy: 1
+  ReactionSpeed: 0.3
+  Sustain: 0.213
+  RotationRelevancy: 0.744
   SmoothingStyle: 1
-  DeltaType: 4
+  DeltaType: 3
   UpdateAsLast: 1
   DetectZeroKeyframes: 1
   StartAfterTPose: 1
   OptimizeWithMesh: {fileID: 0}
-  TailAnimatorAmount: 1
+  TailAnimatorAmount: 0.30419794
   DetachChildren: 0
   Axis2D: 3
   Tangle: 0
@@ -1587,7 +1711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073619356940631909}
-  - component: {fileID: 5493766575567394526}
+  - component: {fileID: 2035029895477445279}
   m_Layer: 0
   m_Name: HeadPivot
   m_TagString: Untagged
@@ -1611,7 +1735,7 @@ Transform:
   - {fileID: 3562787664845212291}
   m_Father: {fileID: 1642296041517559039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5493766575567394526
+--- !u!114 &2035029895477445279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2004,7 +2128,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Gravity: {x: 0, y: 0, z: 0}
-  UseWaving: 1
+  UseWaving: 0
   CosinusAdd: 0
   FixedCycle: 0
   WavingSpeed: 3
@@ -2026,14 +2150,78 @@ MonoBehaviour:
   _editor_IsInspectorViewingColliders: 0
   _editor_IsInspectorViewingIncludedColliders: 0
   _editor_animatorViewedCounter: 1
-  TailSegments: []
+  TailSegments:
+  - ProceduralPosition: {x: -2.1847641, y: -1.7220032, z: 0}
+    ProceduralPositionWeightBlended: {x: -2.1847641, y: -1.7220032, z: 0}
+    TrueTargetRotation: {x: 0.0021305096, y: -0.027951365, z: 0.0016875342, w: 0.9996056}
+    PosRefRotation: {x: 0.0021305096, y: -0.027951365, z: 0.0016875342, w: 0.9996056}
+    PreviousPosReferenceRotation: {x: 0.0021049466, y: -0.027953302, z: 0.0026023649, w: 0.9996036}
+    PreviousPosition: {x: -2.1847641, y: -1.7220032, z: 0}
+    BlendValue: 0.45122695
+    BoneDimensionsScaled: {x: 0, y: 0.282, z: 0}
+    BoneLengthScaled: 0.282
+    InitialLocalPosition: {x: 0, y: 0.282, z: 0}
+    InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
+    InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: 0, y: 0, z: 0, w: 1}
+    ColliderRadius: 0.9099998
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: 0, y: 0, z: 0}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
+    PreviousPush: {x: 0, y: 0, z: 0}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.793
+    RotationSpeed: 1
+    Springiness: 0.676
+    Slithery: 1.2
+    Curling: 0.195
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: 0.0021049466, y: -0.027953302, z: 0.0026023649, w: 0.9996036}
+    LastKeyframeLocalPosition: {x: 0, y: 0.282, z: 0}
+  - ProceduralPosition: {x: -2.18512, y: -1.4420059, z: 0.00120102}
+    ProceduralPositionWeightBlended: {x: -2.1857421, y: -1.4420079, z: 0.001166198}
+    TrueTargetRotation: {x: 0.0021305096, y: -0.027951365, z: 0.0016875342, w: 0.9996056}
+    PosRefRotation: {x: 0.0021305096, y: -0.027951365, z: 0.0016875342, w: 0.9996056}
+    PreviousPosReferenceRotation: {x: 0.00036553983, y: -0.024046717, z: -0.00031073525, w: 0.99971074}
+    PreviousPosition: {x: -2.1839957, y: -1.4420041, z: 0.00023768064}
+    BlendValue: 0.45122695
+    BoneDimensionsScaled: {x: 0, y: 0.27999997, z: 0}
+    BoneLengthScaled: 0.27999997
+    InitialLocalPosition: {x: 0, y: 0.27999997, z: 0}
+    InitialLocalPositionInRoot: {x: 0, y: 0.27999997, z: 0}
+    InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
+    LocalOffset: {x: 0, y: 0, z: 0}
+    InitialLocalRotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderRadius: 0.6824998
+    CollisionContactFlag: 0
+    CollisionContactRelevancy: -1
+    VelocityHelper: {x: -0.07815811, y: -0.0000672541, z: 0.042027604}
+    QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
+    PreviousPush: {x: -0.0010609627, y: 0.000005722046, z: 0.0009657785}
+    Curving: {x: 0, y: 0, z: 0, w: 1}
+    Gravity: {x: 0, y: 0, z: 0}
+    GravityLookOffset: {x: 0, y: 0, z: 0}
+    LengthMultiplier: 1
+    PositionSpeed: 0.793
+    RotationSpeed: 1
+    Springiness: 0.676
+    Slithery: 1.2
+    Curling: 0.195
+    Slippery: 1
+    LastKeyframeLocalRotation: {x: -0, y: -0, z: -0, w: 1}
+    LastKeyframeLocalPosition: {x: 0, y: 0.27999997, z: 0}
   GhostParent:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
-    TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
-    PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
+    ProceduralPosition: {x: -2.1847641, y: -2.0040033, z: 0}
+    ProceduralPositionWeightBlended: {x: -2.1847641, y: -2.0040033, z: 0}
+    TrueTargetRotation: {x: -0, y: -0, z: -0, w: 1}
+    PosRefRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosReferenceRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosition: {x: -2.1847641, y: -2.0040033, z: 0}
     BlendValue: 1
     BoneDimensionsScaled: {x: 0, y: 0, z: 0}
     BoneLengthScaled: 0
@@ -2061,16 +2249,16 @@ MonoBehaviour:
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
   GhostChild:
-    ProceduralPosition: {x: 0, y: 0, z: 0}
-    ProceduralPositionWeightBlended: {x: 0, y: 0, z: 0}
+    ProceduralPosition: {x: -2.185116, y: -1.4420059, z: 0.0012012569}
+    ProceduralPositionWeightBlended: {x: -2.1857405, y: -1.4420079, z: 0.0011663049}
     TrueTargetRotation: {x: 0, y: 0, z: 0, w: 1}
-    PosRefRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosReferenceRotation: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPosition: {x: 0, y: 0, z: 0}
-    BlendValue: 1
+    PosRefRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosReferenceRotation: {x: -0, y: -0, z: -0, w: 1}
+    PreviousPosition: {x: -2.183992, y: -1.4420041, z: 0.0002378661}
+    BlendValue: 0.45122695
     BoneDimensionsScaled: {x: 0, y: 0, z: 0}
     BoneLengthScaled: 0
-    InitialLocalPosition: {x: 0, y: 0, z: 0}
+    InitialLocalPosition: {x: 0, y: 0.42436838, z: 0}
     InitialLocalPositionInRoot: {x: 0, y: 0, z: 0}
     InitialLocalRotationInRoot: {x: 0, y: 0, z: 0, w: 1}
     LocalOffset: {x: 0, y: 0, z: 0}
@@ -2078,18 +2266,18 @@ MonoBehaviour:
     ColliderRadius: 1
     CollisionContactFlag: 0
     CollisionContactRelevancy: -1
-    VelocityHelper: {x: 0, y: 0, z: 0}
+    VelocityHelper: {x: -0.04995373, y: 0.000034381916, z: 0.04362936}
     QVelocityHelper: {x: 0, y: 0, z: 0, w: 1}
-    PreviousPush: {x: 0, y: 0, z: 0}
+    PreviousPush: {x: -0.0010607243, y: 0.000005722046, z: 0.0009658176}
     Curving: {x: 0, y: 0, z: 0, w: 1}
     Gravity: {x: 0, y: 0, z: 0}
     GravityLookOffset: {x: 0, y: 0, z: 0}
     LengthMultiplier: 1
-    PositionSpeed: 1
+    PositionSpeed: 0.793
     RotationSpeed: 1
-    Springiness: 0
-    Slithery: 1
-    Curling: 0.5
+    Springiness: 0.676
+    Slithery: 1.2
+    Curling: 0.195
     Slippery: 1
     LastKeyframeLocalRotation: {x: 0, y: 0, z: 0, w: 0}
     LastKeyframeLocalPosition: {x: 0, y: 0, z: 0}
@@ -2130,7 +2318,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   DeflectOnlyCollisions: 1
   _Editor_Category: 0
-  _Editor_FeaturesCategory: 0
+  _Editor_FeaturesCategory: 3
   DrawGizmos: 1
   StartBone: {fileID: 2073619356940631909}
   EndBone: {fileID: 3562787664845212291}
@@ -2143,17 +2331,17 @@ MonoBehaviour:
   AnimatePhysics: 0
   InterpolateRate: 0
   Prewarm: 0
-  Slithery: 0.341
-  Curling: 0.302
-  Springiness: 0.311
-  MaxStretching: 0.375
-  AngleLimit: 181
+  Slithery: 1.2
+  Curling: 0.195
+  Springiness: 0.676
+  MaxStretching: 0.617
+  AngleLimit: 89.78752
   AngleLimitAxis: {x: 0, y: 0, z: 0}
   LimitAxisRange: {x: 0, y: 0}
   LimitSmoothing: 0.5
   MotionInfluence: 1
   MotionInfluenceInY: 1
-  IncludeParent: 1
+  IncludeParent: 0
   UnifyBendiness: 0
   ReactionSpeed: 0.793
   Sustain: 0
@@ -2164,7 +2352,7 @@ MonoBehaviour:
   DetectZeroKeyframes: 1
   StartAfterTPose: 1
   OptimizeWithMesh: {fileID: 0}
-  TailAnimatorAmount: 1
+  TailAnimatorAmount: 0.45122695
   DetachChildren: 0
   Axis2D: 3
   Tangle: 0

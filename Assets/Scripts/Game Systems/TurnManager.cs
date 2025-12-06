@@ -39,8 +39,7 @@ public class TurnManager : MonoBehaviour
 
     [ShowNonSerializedField] private TurnPhase _turnPhase;
     // not using a queue so we can move up and down the list depending on abilities
-    [SerializeField]
-    private List<Actor> _turnQueue;
+    [SerializeField] private List<Actor> _turnQueue = new List<Actor>();
 
     [ShowNonSerializedField]
     private Actor _currentActor;
@@ -53,7 +52,6 @@ public class TurnManager : MonoBehaviour
     private void Awake()
     {
         _turnPhase = TurnPhase.Idle;
-        _turnQueue = new List<Actor>();
         // not really a singleton, beware of multiple instances
         // self contained instance that overrides per most recent scene load
         _instance = this;

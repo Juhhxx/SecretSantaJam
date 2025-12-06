@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actions
   _actionPoints: {fileID: 11400000, guid: 0ab7d3ffda76d354690be1107be2f02d, type: 2}
+  _gameEvents: {fileID: 0}
 --- !u!114 &9005784084562264261
 MonoBehaviour:
   m_ObjectHideFlags: 0
