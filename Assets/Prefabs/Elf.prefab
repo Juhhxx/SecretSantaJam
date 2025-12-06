@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669cac65f92f25c4cad18fe7f346dde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  _gameEvents: {fileID: 11400000, guid: fe379635d52acd147b9f5a5ddb5185aa, type: 2}
   _velocity: 3
   _playerNum: 1
 --- !u!114 &2194395258140002951

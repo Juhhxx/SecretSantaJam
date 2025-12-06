@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameVariableSettings _gameEvents;
     [SerializeField] private float _velocity;
-    [SerializeField, Min(1)] private int _playerNum;
+    [SerializeField, Min(1)] private int _playerNum = 1;
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDelta = Vector2.zero;
     private Vector3 _baseVelocity = Vector2.zero;
 
+    private Actor actor;
     private bool _lostMovement;
 
     [Header("Internal Variables")] [ShowNonSerializedField]
@@ -20,13 +22,19 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanMove
     {
-        get { return _accumulatedMovement <= _maxMoveDistance; }
+        get { return _accumulatedMovement <= _maxMoveDistance 
+                     && (actor != null && actor.IsTurn); }
+    }
+
+    private void Awake()
+    {
+        actor = GetComponent<Actor>();
     }
 
     private void Start()
     {
-        ResetUsedDistance();
         _rigidbody = GetComponent<Rigidbody2D>();
+        ResetUsedDistance();
     }
 
     public void FixedUpdate()
@@ -36,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
             DoMovement();
 
             _accumulatedMovement += _baseVelocity.magnitude * Time.fixedDeltaTime;
+            _gameEvents?.RaiseMovementUpdate(_accumulatedMovement);
+
             _rigidbody.linearVelocity = _baseVelocity;
 
             if (!CanMove)
@@ -58,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     public void ResetUsedDistance()
     {
         _accumulatedMovement = 0;
+        _gameEvents?.RaiseMovementUpdate(_accumulatedMovement);
         _lostMovement = false;
     }
 
