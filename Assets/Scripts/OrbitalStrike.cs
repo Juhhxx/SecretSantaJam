@@ -15,10 +15,12 @@ public class OrbitalStrike : MonoBehaviour
     }
     private void TrackMouse()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        // Active tracking
+        if (!hasSelectedTarget) mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Debug.Log(mousePosition);
         if (Mouse.current.leftButton.wasPressedThisFrame && !hasSelectedTarget)
         {
+            // Locked in
             targetedLocation = mousePosition;
             hasSelectedTarget = true;   
             StartCoroutine(LaunchSequence());
@@ -30,6 +32,7 @@ public class OrbitalStrike : MonoBehaviour
         GameObject instantiatedNuke = Instantiate(_nukeSitePrefab, targetedLocation, quaternion.identity);
         CircleCollider2D nukeCollider = instantiatedNuke.GetComponent<CircleCollider2D>();
         yield return new WaitForSecondsRealtime(3);
+        // Bomb goes off
         SpriteRenderer nukeSiteSR = instantiatedNuke.GetComponent<SpriteRenderer>();
         nukeCollider.enabled = true;
         SetAlpha(nukeSiteSR, 1);
