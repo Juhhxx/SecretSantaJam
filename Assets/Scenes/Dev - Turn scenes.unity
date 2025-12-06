@@ -1627,10 +1627,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: MatchUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4745336567221562609, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: m_text
+      value: <wave>Sample text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181764688939239328, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: preview
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181764688939239328, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: animationsOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181764688939239328, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: sceneShowAnimations._serializedList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814588516459150784, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: tagEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814588516459150784, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      propertyPath: globalEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5128692390414633578, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 34df1e1a9c68b774093ff9ec97186a73, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
