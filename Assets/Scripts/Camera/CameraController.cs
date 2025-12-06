@@ -13,19 +13,18 @@ public class CameraController : MonoBehaviour
     {
         if (_settings == null)
         {
-            _settings = ScriptableObject.CreateInstance<GameVariableSettings>();
+            Debug.LogError("Settings needs to be set");
         }
     }
 
     private void OnEnable()
     {
-        TurnManager.instance.TurnChangeCallback += FocusActor;
+        _settings.turnActorChange += FocusActor;
     }
 
     private void OnDisable()
     {
-        if (TurnManager.instance != null)
-            TurnManager.instance.TurnChangeCallback -= FocusActor;
+        _settings.turnActorChange -= FocusActor;
     }
 
     // Force camera position on target

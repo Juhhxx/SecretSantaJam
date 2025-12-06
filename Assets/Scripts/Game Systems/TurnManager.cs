@@ -12,6 +12,7 @@ public delegate void TurnChange(Actor actor);
 public delegate void ActorQueueChange(Actor actor);
 public class TurnManager : MonoBehaviour
 {
+    [SerializeField] private GameVariableSettings _gameEvents;
     enum TurnPhase
     {
         Idle = -1,
@@ -33,7 +34,6 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public event TurnChange TurnChangeCallback;
     public event Action TurnEndCallback;
     public event ActorQueueChange QueueChangeCallback;
 
@@ -59,11 +59,6 @@ public class TurnManager : MonoBehaviour
         _instance = this;
     }
 
-    private void Start()
-    {
-        
-    }
-
     [Button("Start Next Turn")]
     public void StartNextTurn()
     {
@@ -86,8 +81,9 @@ public class TurnManager : MonoBehaviour
                 _nextInQueue = _turnQueue[0];
         }
         
-        if (TurnChangeCallback != null)
-            TurnChangeCallback(_currentActor);
+        _gameEvents.RaiseTurnChange(_currentActor);
+        
+        _currentActor?.StartTurn();
     }
 
     [Button("Finish Turn")]
@@ -95,6 +91,7 @@ public class TurnManager : MonoBehaviour
     {
         if (_currentActor == null) return;
         
+        _currentActor.EndTurn();
         _turnQueue.Add(_currentActor); // move current actor to the bottom of the queue
         if (TurnEndCallback != null)
             TurnEndCallback();

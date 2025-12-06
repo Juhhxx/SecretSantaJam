@@ -35,11 +35,11 @@ public class Actor : MonoBehaviour
 
     public void StartTurn()
     {
-        
+        OnStartTurn?.Invoke();
     }
 
     public void EndTurn()
     {
-        
+        OnEndTurn?.Invoke();
     }
 }
