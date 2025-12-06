@@ -5,18 +5,27 @@ using UnityEngine;
 public class Actions : MonoBehaviour
 {
     private Actor _actor;
-    private PlayerMovement _movement;
     [SerializeField] private ActionPoints _actionPoints;
-    public ActionPoints ActionPoints => _actionPoints;
+    [SerializeField] private GameVariableSettings _gameEvents;
+
+    private float _movementPointsUsed;
+    private int _combatPointsUsed;
+    public float MovementPointsUsed => _movementPointsUsed;
+    public float CombatPointsUsed => _combatPointsUsed;
     
+    public float MaxMovementPoints => _actionPoints.MovementPoints;
+    public Actor Actor => _actor;
     private void Awake()
     {
+        if (_gameEvents == null)
+        {
+            _gameEvents = Resources.Load<GameVariableSettings>("GameEvents");
+        }
+        
         if (_actionPoints == null)
             _actionPoints = ScriptableObject.CreateInstance<ActionPoints>();
 
         _actor = GetComponent<Actor>();
-        _movement = GetComponent<PlayerMovement>();
-        _movement?.SetMoveDistance(_actionPoints.MovementPoints);
     }
 
     private void OnEnable()
@@ -31,6 +40,26 @@ public class Actions : MonoBehaviour
 
     private void StartTurnActions()
     {
-        _movement.ResetUsedDistance();
+        _movementPointsUsed = 0;
+        _gameEvents?.RaiseMovementUpdate(_movementPointsUsed);
+    }
+
+    public void TakeMovementPoints(float amount)
+    {
+        _movementPointsUsed += amount;
+        _gameEvents?.RaiseMovementUpdate(_movementPointsUsed);
+    }
+
+    public void TakeCombatPoints(int amount)
+    {
+        
+    }
+
+    public void Update()
+    {
+        if (_actor.IsTurn)
+        {
+            
+        }
     }
 }

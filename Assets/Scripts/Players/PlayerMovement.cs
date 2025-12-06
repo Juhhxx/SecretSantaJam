@@ -5,30 +5,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private GameVariableSettings _gameEvents;
     [SerializeField] private float _velocity;
     [SerializeField, Min(1)] private int _playerNum = 1;
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDelta = Vector2.zero;
     private Vector3 _baseVelocity = Vector2.zero;
 
-    private Actor actor;
+    private Actions actions;
     private bool _lostMovement;
-
-    [Header("Internal Variables")] [ShowNonSerializedField]
-    private float _maxMoveDistance = 10f;
-
-    [ShowNonSerializedField] private float _accumulatedMovement;
 
     public bool CanMove
     {
-        get { return _accumulatedMovement <= _maxMoveDistance 
-                     && (actor != null && actor.IsTurn); }
+        get { return actions.MovementPointsUsed <= actions.MaxMovementPoints 
+                     && (actions.Actor != null && actions.Actor.IsTurn); }
     }
 
     private void Awake()
     {
-        actor = GetComponent<Actor>();
+        actions = GetComponent<Actions>();
     }
 
     private void Start()
@@ -43,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
         {
             DoMovement();
 
-            _accumulatedMovement += _baseVelocity.magnitude * Time.fixedDeltaTime;
-            _gameEvents?.RaiseMovementUpdate(_accumulatedMovement);
+            float movementDelta = _baseVelocity.magnitude * Time.fixedDeltaTime;
+            actions.TakeMovementPoints(movementDelta);
 
             _rigidbody.linearVelocity = _baseVelocity;
 
@@ -60,15 +54,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SetMoveDistance(float maxDistance)
-    {
-        _maxMoveDistance = maxDistance;
-    }
-
     public void ResetUsedDistance()
     {
-        _accumulatedMovement = 0;
-        _gameEvents?.RaiseMovementUpdate(_accumulatedMovement);
         _lostMovement = false;
     }
 

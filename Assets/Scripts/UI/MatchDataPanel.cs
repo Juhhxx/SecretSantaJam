@@ -40,7 +40,7 @@ public class MatchDataPanel : MonoBehaviour
             _staminaBar.fillAmount = 1f;
             return;
         }
-        float maxMovement = _actorActions.ActionPoints.MovementPoints;
+        float maxMovement = _actorActions.MaxMovementPoints;
         float value =  (maxMovement - accumulatedMovement) / maxMovement;
         _staminaBar.fillAmount = value;
     }
