@@ -6,17 +6,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _velocity;
-    [SerializeField] private int _playerNum;
+    [SerializeField, Min(1)] private int _playerNum;
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDelta = Vector2.zero;
     private Vector3 _baseVelocity = Vector2.zero;
 
     private bool _lostMovement;
-    [Header("Internal Variables")]
-    [ShowNonSerializedField]
+
+    [Header("Internal Variables")] [ShowNonSerializedField]
     private float _maxMoveDistance = 10f;
-    [ShowNonSerializedField]
-    private float _accumulatedMovement;
+
+    [ShowNonSerializedField] private float _accumulatedMovement;
 
     public bool CanMove
     {
