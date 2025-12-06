@@ -14,15 +14,33 @@ public class ElfVisuals : MonoBehaviour
     [SerializeField] private Color hitColor = Color.red;
 
     private SpriteRenderer[] _sprites;
+    private PlayerMovement _movement;
+    private HealthSystem _health;
+    private static readonly int _movementHash = Animator.StringToHash("Movement");
 
     private void Awake()
     {
+        _health = GetComponentInParent<HealthSystem>();
+        _movement = GetComponentInParent<PlayerMovement>();
         _sprites = GetComponentsInChildren<SpriteRenderer>(true);
     }
 
-    public void SetMovement(Vector2 movement)
+    private void OnEnable()
     {
-        
+        _health.OnHit += GetHit;
+    }
+
+    private void OnDisable()
+    {
+        _health.OnHit -= GetHit;
+    }
+
+    private void Update()
+    {
+        if (_movement != null)
+        {
+            _animator.SetFloat(_movementHash, _movement.CanMove ? _movement.Velocity.magnitude : 0f);
+        }
     }
 
     [Button()]
