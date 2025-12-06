@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using NaughtyAttributes;
+using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class ElfVisuals : MonoBehaviour
+{
+    [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _hitPS;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioPlayer _hitSound;
+    [SerializeField] private float hitRotationAmplitude = 10;
+    [SerializeField] private Color hitColor = Color.red;
+
+    private SpriteRenderer[] _sprites;
+
+    private void Awake()
+    {
+        _sprites = GetComponentsInChildren<SpriteRenderer>(true);
+    }
+
+    public void SetMovement(Vector2 movement)
+    {
+        
+    }
+
+    [Button()]
+    public void Attack()
+    {
+        _animator.SetTrigger("Attack");
+    }
+
+    [Button()]
+    public void GetHit()
+    {
+        if (LeanTween.isTweening(gameObject))
+        {
+            LeanTween.cancel(gameObject);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            
+            foreach (var sprite in _sprites)
+            {
+                sprite.color = Color.white;
+            }
+        }
+        
+        _hitSound?.Play(_audioSource);
+        _hitPS?.Play();
+        
+        transform.LeanScale(Vector3.one * Random.Range(0.8f, 1.2f), 0.8f).setEasePunch();
+        transform.LeanRotateZ(Random.Range(-hitRotationAmplitude, hitRotationAmplitude), 0.6f).setEasePunch();
+
+        foreach (var sprite in _sprites)
+        {
+            LeanTween.color(sprite.gameObject, hitColor, 0.45f).setEasePunch();
+        }
+    }
+}
