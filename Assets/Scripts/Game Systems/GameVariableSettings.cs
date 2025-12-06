@@ -11,7 +11,13 @@ public class GameVariableSettings : ScriptableObject
     public Action<float> movementUsageUpdate;
     public Action<float> currentSkipHoldTime;
     public TurnChange turnActorChange;
+    public Action<Actor> combatCallout;
 
+    public void RaiseCombatCallout(Actor a)
+    {
+        combatCallout?.Invoke(a);
+    }
+    
     public void RaiseMovementUpdate(float accumulatedMovement)
     {
         movementUsageUpdate?.Invoke(accumulatedMovement);
