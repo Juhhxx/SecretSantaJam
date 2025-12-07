@@ -13,10 +13,16 @@ public class GameVariableSettings : ScriptableObject
     public TurnChange turnActorChange;
     public Action<Actor> combatCallout;
     public Action<Actor, Texture2D> portraitGenerated;
+    public Action gameStart;
 
     public void RaiseCombatCallout(Actor a)
     {
         combatCallout?.Invoke(a);
+    }
+
+    public void RaiseGameStart()
+    {
+        gameStart?.Invoke();
     }
 
     public void RaisePortraitGenerated(Actor actor, Texture2D portrait)
