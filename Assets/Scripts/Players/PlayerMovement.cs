@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private Actions actions;
     private bool _lostMovement;
 
+    public Vector2 Velocity => _baseVelocity;
+
     public bool CanMove
     {
         get { 

@@ -28,6 +28,7 @@ public class HealthSystem : MonoBehaviour
     }
 
     public event Action OnDeath;
+    public event Action OnHit;
 
     private void Start()
     {
@@ -36,7 +37,11 @@ public class HealthSystem : MonoBehaviour
         OnDeath += () => Debug.Log($"I DIED {gameObject.name}");
     }
 
-    public void TakeDamage(float amount) => CurrentHP -= amount;
+    public void TakeDamage(float amount)
+    {
+        CurrentHP -= amount;
+        OnHit?.Invoke();
+    } 
     public void Heal(float amount) => CurrentHP += amount;
     
 }
