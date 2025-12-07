@@ -52,14 +52,16 @@ public class Actions : MonoBehaviour
 
     public void TakeCombatPoints(int amount)
     {
+        _combatPointsUsed += amount;
         
+        if (_combatPointsUsed == _actionPoints.CombatPoints)
+        {
+            
+        }
     }
 
     public void Update()
     {
-        if (_actor.IsTurn)
-        {
-            
-        }
+        
     }
 }
