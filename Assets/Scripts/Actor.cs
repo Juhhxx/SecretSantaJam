@@ -6,7 +6,6 @@ public class Actor : MonoBehaviour
 {
     public event Action OnStartTurn;
     public event Action OnEndTurn;
-    [Min(0)]
     public int initiative;
     [Min(0)]
     public int teamID;
@@ -46,12 +45,17 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void StartTurn()
+    public void FinishTurnActor()
+    {
+        TurnManager.instance.StartNextTurn();
+    }
+
+    public virtual void StartTurn()
     {
         OnStartTurn?.Invoke();
     }
 
-    public void EndTurn()
+    public virtual void EndTurn()
     {
         OnEndTurn?.Invoke();
     }

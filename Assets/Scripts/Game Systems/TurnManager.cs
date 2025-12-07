@@ -10,10 +10,13 @@ using UnityEngine;
 /// gift box that expires for example
 /// </summary>
 public delegate void TurnChange(Actor actor);
+
 public delegate void ActorQueueChange(Actor actor);
+
 public class TurnManager : MonoBehaviour
 {
     [SerializeField] private GameVariableSettings _gameEvents;
+
     enum TurnPhase
     {
         Idle = -1,
@@ -21,7 +24,9 @@ public class TurnManager : MonoBehaviour
         Turn = 1,
         End = 2
     }
+
     private static TurnManager _instance;
+
     public static TurnManager instance
     {
         get
@@ -39,14 +44,13 @@ public class TurnManager : MonoBehaviour
     public event ActorQueueChange QueueChangeCallback;
 
     [ShowNonSerializedField] private TurnPhase _turnPhase;
+
     // not using a queue so we can move up and down the list depending on abilities
     [SerializeField] private List<Actor> _turnQueue = new List<Actor>();
 
-    [ShowNonSerializedField]
-    private Actor _currentActor;
+    [ShowNonSerializedField] private Actor _currentActor;
     public Actor CurrentActor => _currentActor;
-    [ShowNonSerializedField]
-    private Actor _nextInQueue;
+    [ShowNonSerializedField] private Actor _nextInQueue;
 
     public int TurnCount { get; private set; }
 
@@ -68,20 +72,20 @@ public class TurnManager : MonoBehaviour
         }
 
         _turnPhase = TurnPhase.Start;
-        
+
         TurnCount++;
 
         if (_turnQueue.Count > 0)
         {
             _currentActor = _turnQueue[0];
             _turnQueue.RemoveAt(0);
-            
+
             if (_turnQueue.Count > 0)
                 _nextInQueue = _turnQueue[0];
         }
-        
+
         _gameEvents.RaiseTurnChange(_currentActor);
-        
+
         _currentActor?.StartTurn();
     }
 
@@ -89,7 +93,7 @@ public class TurnManager : MonoBehaviour
     public void FinishTurn()
     {
         if (_currentActor == null) return;
-        
+
         _currentActor.EndTurn();
         _turnQueue.Add(_currentActor); // move current actor to the bottom of the queue
         if (TurnEndCallback != null)
@@ -102,12 +106,19 @@ public class TurnManager : MonoBehaviour
     {
         if (_turnQueue == null)
             _turnQueue = new List<Actor>();
-        
+
         if (!_turnQueue.Contains(actor))
         {
-            int index = SortedActorIndex(actor);
-            _turnQueue.Insert(index, actor);
-            
+            if (actor.initiative < 0)
+            {
+                _turnQueue.Add(actor);
+            }
+            else
+            {
+                int index = SortedActorIndex(actor);
+                _turnQueue.Insert(index, actor);
+            }
+
             if (QueueChangeCallback != null)
                 QueueChangeCallback(actor);
         }
@@ -122,7 +133,7 @@ public class TurnManager : MonoBehaviour
         if (_turnQueue.Contains(actor))
         {
             _turnQueue.Remove(actor);
-            
+
             if (QueueChangeCallback != null)
                 QueueChangeCallback(actor);
         }

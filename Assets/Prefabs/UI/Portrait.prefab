@@ -233,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6341496611956275539}
   - component: {fileID: 1708564052195508229}
+  - component: {fileID: 4530026940737441076}
   m_Layer: 5
   m_Name: Portrait
   m_TagString: Untagged
@@ -277,6 +278,18 @@ MonoBehaviour:
   _teamColors:
   - {r: 0.21960786, g: 0.7176471, b: 0.3921569, a: 1}
   - {r: 0.3647059, g: 0.15294118, b: 0.3647059, a: 1}
+--- !u!225 &4530026940737441076
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916662580778882082}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &4716650928564230979
 GameObject:
   m_ObjectHideFlags: 0
