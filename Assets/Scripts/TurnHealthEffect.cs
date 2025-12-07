@@ -1,12 +1,35 @@
+using System;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class TurnHPEffect : MonoBehaviour
+public class TurnHPEffect : Actor
 {
     [SerializeField] private float _amount;
     [SerializeField] private bool _takeLife;
     [SerializeField] private float _radius;
     [SerializeField] private bool _showRadius;
+
+    [SerializeField] private ParticleSystem ps;
+
+    
+    public override void StartTurn()
+    {
+        base.StartTurn();
+        
+        var seq = LeanTween.sequence();
+        seq.append(0.6f);
+        seq.append(() =>
+        {
+            transform.LeanScale(Vector3.one * 1.2f, 0.3f).setEasePunch();
+            GiveDamage();
+        });
+
+        seq.append(1f);
+        seq.append(() =>
+        {
+            FinishTurnActor();
+        });
+    }
 
     [Button(enabledMode: EButtonEnableMode.Playmode)]
     private void GiveDamage()
@@ -25,6 +48,8 @@ public class TurnHPEffect : MonoBehaviour
                     hs.Heal(_amount);
             }
         }
+        
+        ps?.Play();
     }
 
     private void OnDrawGizmos()

@@ -103,7 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f189f8a2649b74c86bb1a984df3eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurnHPEffect
+  initiative: -1
+  teamID: 3
   _amount: 5
   _takeLife: 1
   _radius: 3.5
   _showRadius: 1
+  ps: {fileID: 0}
