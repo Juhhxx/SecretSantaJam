@@ -13,18 +13,32 @@ public class ActionController : MonoBehaviour
     }
 
     [SerializeField] private List<ActionKey> _abilityKeys;
-    [SerializeField] private bool _isActing;
+
+    private Actions _actions;
+
+    private void Awake()
+    {
+        _actions = GetComponent<Actions>();
+    }
 
     private void CheckActions()
     {
         foreach (ActionKey ak in _abilityKeys)
         {
-            if (Input.GetKeyDown(ak.Key)) ak.Ability.SpawnAbility(gameObject);
+            if (Input.GetKeyDown(ak.Key))
+            {
+                ak.Ability.SpawnAbility(gameObject);
+                _actions.TakeCombatPoints(1);
+                return;
+            }
         }
     }
 
     private void Update()
     {
-        if (_isActing) CheckActions();
+        if (_actions.Actor.IsTurn)
+        {
+            CheckActions();
+        }
     }
 }
