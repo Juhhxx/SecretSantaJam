@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -125,6 +126,11 @@ public class TurnManager : MonoBehaviour
             if (QueueChangeCallback != null)
                 QueueChangeCallback(actor);
         }
+    }
+
+    public void OrderByInitiative()
+    {
+        _turnQueue = _turnQueue.OrderBy(x => x.initiative).ToList();
     }
 
     private int SortedActorIndex(Actor newActor)

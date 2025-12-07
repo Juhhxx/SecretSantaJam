@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _lostMovement;
 
     public Vector2 Velocity => _baseVelocity;
-
+    
     public bool CanMove
     {
         get { 
@@ -79,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
         _moveDelta.y = Input.GetAxis("Vertical" + _playerNum);
 
         if (_moveDelta.magnitude > 0) _currentDirection = (_moveDelta * 5).normalized;
+    }
+
+    public void SetTeam(int teamID)
+    {
+        _playerNum = teamID + 1; // 0 - 1
     }
 
     private void DoMovement()

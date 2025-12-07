@@ -18,6 +18,12 @@ public class Actor : MonoBehaviour
             return TurnManager.instance.CurrentActor == this;
         }
     }
+
+    private void Awake()
+    {
+        gameObject.name = gameObject.name + " - Team " + teamID;
+    }
+
     private void OnEnable()
     {
         TurnManager.instance.EnqueueActor(this);

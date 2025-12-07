@@ -57,8 +57,9 @@ public class CalloutsPopupText : MonoBehaviour
         _seq = LeanTween.sequence();
         _seq.append(1f);
 
-        Vector3 pos = a == null ? Vector3.zero : a.transform.position + Vector3.up;
+        Vector3 pos = a == null ? Vector3.zero : a.transform.position + Vector3.up * 2f;
         _textInstance.transform.position = pos;
+        _textInstance.transform.SetParent(a.transform);
 
         LeanTween.alphaVertex(_textInstance.gameObject, 1f, 0.4f).setDelay(1f).setEaseInCirc();
         _seq.append(_textInstance.transform.LeanMoveY(
@@ -69,6 +70,7 @@ public class CalloutsPopupText : MonoBehaviour
             _textInstance.alpha = 0f;
             _textInstance.ForceMeshUpdate();
             _textInstance.gameObject.SetActive(false);
+            _textInstance.transform.SetParent(transform);
         });
     }
 }
