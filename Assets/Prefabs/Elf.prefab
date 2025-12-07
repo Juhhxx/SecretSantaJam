@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8780458268183004049}
   - component: {fileID: 9005784084562264261}
   - component: {fileID: 2194395258140002951}
+  - component: {fileID: 7247139208152185006}
   - component: {fileID: 1318227421005180368}
   - component: {fileID: 7589331002855051969}
   m_Layer: 6
@@ -95,6 +96,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   _maxHP: 20
   _currentHP: 0
+--- !u!114 &7247139208152185006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497394407002383236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7441a9c04a8dca469771e7bc76b534b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActionController
+  _abilityKeys:
+  - Key: 256
+    Ability: {fileID: 11400000, guid: a3f2e2136643b86449b7af1e4cf4518c, type: 2}
+  _isActing: 0
 --- !u!50 &1318227421005180368
 Rigidbody2D:
   serializedVersion: 5
