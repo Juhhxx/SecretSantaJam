@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CameraShake;
 using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -74,6 +75,8 @@ public class ElfVisuals : MonoBehaviour
                 sprite.color = Color.white;
             }
         }
+        
+        CameraShaker.Presets.ShortShake2D();
         
         _hitSound?.Play(_audioSource);
         _hitPS?.Play();
