@@ -8,7 +8,6 @@ public class MatchDataPanel : MonoBehaviour
     [SerializeField] private GameVariableSettings _gameEvents;
     [SerializeField] private Image _fillTurnSkipImage;
     [SerializeField] private Image _staminaBar;
-    [SerializeField] private TextMeshProUGUI _actorLabel;
 
     private Actions _actorActions;
     private void Awake()
@@ -49,7 +48,6 @@ public class MatchDataPanel : MonoBehaviour
     {
         if (a == null) return;
         _actorActions = a.GetComponent<Actions>();
-        _actorLabel.text = a.name + $" (team ID {a.teamID})";
     }
     
     private void UpdateSkipTime(float time)

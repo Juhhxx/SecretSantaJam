@@ -1,11 +1,15 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using NaughtyAttributes;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameVariableSettings _settings;
 
+    public Transform camera;
     public Transform Target;
     private bool onTarget = false;
 
@@ -37,6 +41,9 @@ public class CameraController : MonoBehaviour
         onTarget = true;
     }
 
+    private Coroutine cameraMove;
+    private LTSeq lastSequence = null;
+
     public void FocusActor(Actor a)
     {
         if (a == null)
@@ -44,6 +51,7 @@ public class CameraController : MonoBehaviour
             return;
         }
 
+        CinemachineCamera cam = camera.GetComponent<CinemachineCamera>();
 
         onTarget = false;
         Target = a.gameObject.transform;
@@ -53,10 +61,22 @@ public class CameraController : MonoBehaviour
             LeanTween.cancel(gameObject);
         }
 
-        var seq = LeanTween.sequence();
-        seq.append(0.4f);
-        seq.append(
-            transform.LeanMove(targetPos, _settings.CameraTurnFollowTime).setEaseInCubic().setEaseOutCubic()
-                .setOnComplete(() => onTarget = true));
+        if (cameraMove != null)
+            StopCoroutine(cameraMove);
+        cameraMove = StartCoroutine(SetNewTarget(cam, a.transform));
+    }
+
+    private IEnumerator SetNewTarget(CinemachineCamera cam, Transform target)
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        cam.Target = new CameraTarget()
+        {
+            TrackingTarget = target
+        };
+
+        yield return new WaitForSeconds(0.4f);
+        onTarget = true;
+        cameraMove = null;
     }
 }
