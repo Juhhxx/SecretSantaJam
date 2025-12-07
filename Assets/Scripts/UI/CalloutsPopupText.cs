@@ -61,10 +61,10 @@ public class CalloutsPopupText : MonoBehaviour
         _textInstance.transform.position = pos;
         _textInstance.transform.SetParent(a.transform);
 
-        LeanTween.alphaVertex(_textInstance.gameObject, 1f, 0.4f).setDelay(1f).setEaseInCirc();
+        // LeanTween.alphaVertex(_textInstance.gameObject, 1f, 0.4f).setDelay(1f).setEaseInCirc();
         _seq.append(_textInstance.transform.LeanMoveY(
             _textInstance.transform.position.y + 0.2f, 1.1f).setEaseOutBack());
-        _seq.append(LeanTween.alphaVertex(_textInstance.gameObject, 0f, 0.67f).setEaseOutCubic());
+        // _seq.append(LeanTween.alphaVertex(_textInstance.gameObject, 0f, 0.67f).setEaseOutCubic());
         _seq.append(() =>
         {
             _textInstance.alpha = 0f;

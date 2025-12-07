@@ -85,7 +85,6 @@ public class TurnManager : MonoBehaviour
         }
 
         _gameEvents.RaiseTurnChange(_currentActor);
-
         _currentActor?.StartTurn();
     }
 
