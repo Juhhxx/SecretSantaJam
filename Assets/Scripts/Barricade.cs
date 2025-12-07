@@ -60,7 +60,7 @@ public class Barricade : MonoBehaviour
     }
     private IEnumerator WallBuildCR()
     {
-        if (_useController)
+        if (!_useController)
             yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
         else
             yield return new WaitUntil(() => Input.GetButtonDown("Fire2"));

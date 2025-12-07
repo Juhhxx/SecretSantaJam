@@ -75,7 +75,7 @@ public class Shotgun : MonoBehaviour
 
     private IEnumerator ShootCR()
     {
-        if (_useController)
+        if (!_useController)
             yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
         else
             yield return new WaitUntil(() => Input.GetButtonDown("Fire2"));
