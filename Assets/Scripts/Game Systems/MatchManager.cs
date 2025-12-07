@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -54,10 +55,14 @@ public class MatchManager : MonoBehaviour
 
         TurnManager.instance.OrderByInitiative();
 
+        _pcs = _pcs.OrderBy(x => x.initiative).ToList();
+        
         yield return null;
         GenerateElfPortraits();
 
         yield return new WaitForSeconds(0.6f);
+        
+        _gameSettings.RaiseGameStart();
         
         if (_startOnAwake)
         {
