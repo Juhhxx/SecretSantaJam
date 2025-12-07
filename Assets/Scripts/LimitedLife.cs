@@ -28,12 +28,12 @@ public class LimitedLife : MonoBehaviour
 
     private void OnEnable()
     {
-        _actor.OnEndTurn += CountTurn;
+        if (_actor != null) _actor.OnEndTurn += CountTurn;
     }
 
     private void OnDisable()
     {
-        _actor.OnEndTurn -= CountTurn;
+        if (_actor != null)_actor.OnEndTurn -= CountTurn;
     }
 
     private void Update()
@@ -55,10 +55,14 @@ public class LimitedLife : MonoBehaviour
     {
         Debug.Log("Die - " + gameObject.name);
 
-        LeanTween.cancel(gameObject);
-        var seq = LeanTween.sequence();
+        if (_turnLimit)
+        {
+            LeanTween.cancel(gameObject);
+            var seq = LeanTween.sequence();
 
-        seq.append(transform.LeanScale(Vector3.zero, 0.6f).setEasePunch().setEaseOutCubic());
+            seq.append(transform.LeanScale(Vector3.zero, 0.6f).setEasePunch().setEaseOutCubic());
+        }
+
         Destroy(gameObject);
     }
 }

@@ -12,8 +12,11 @@ public class Actions : MonoBehaviour
     private int _combatPointsUsed;
     public float MovementPointsUsed => _movementPointsUsed;
     public float CombatPointsUsed => _combatPointsUsed;
-    
     public float MaxMovementPoints => _actionPoints.MovementPoints;
+    public float MaxCombatPoints => _actionPoints.CombatPoints;
+
+    public bool OutOfPoints =>
+        _movementPointsUsed >= MaxMovementPoints && _combatPointsUsed >= _actionPoints.CombatPoints;
     public Actor Actor => _actor;
     private void Awake()
     {
@@ -53,15 +56,16 @@ public class Actions : MonoBehaviour
     public void TakeCombatPoints(int amount)
     {
         _combatPointsUsed += amount;
-        
-        if (_combatPointsUsed == _actionPoints.CombatPoints)
-        {
-            
-        }
     }
 
     public void Update()
     {
-        
+        if (_actor.IsTurn)
+        {
+            if (OutOfPoints)
+            {
+                _actor.FinishTurnActor();
+            }
+        }
     }
 }

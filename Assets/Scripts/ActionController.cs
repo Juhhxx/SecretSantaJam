@@ -27,16 +27,23 @@ public class ActionController : MonoBehaviour
         {
             if (Input.GetKeyDown(ak.Key))
             {
-                ak.Ability.SpawnAbility(gameObject);
-                _actions.TakeCombatPoints(1);
+                GameObject obj = ak.Ability.SpawnAbility(gameObject);
+                
+                var component = obj.AddComponent<DestroyMessage>();
+                component.onDestroy += UseCombatPoint;
                 return;
             }
         }
     }
 
+    private void UseCombatPoint()
+    {
+        _actions.TakeCombatPoints(1);
+    }
+
     private void Update()
     {
-        if (_actions.Actor.IsTurn)
+        if (_actions.Actor.IsTurn && _actions.CombatPointsUsed < _actions.MaxCombatPoints)
         {
             CheckActions();
         }
