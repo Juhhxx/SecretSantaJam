@@ -163,10 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f189f8a2649b74c86bb1a984df3eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurnHPEffect
+  initiative: 0
+  teamID: 0
   _amount: 5
   _takeLife: 0
   _radius: 5
   _showRadius: 1
+  ps: {fileID: 0}
 --- !u!1 &564057669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6497394407002383236, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
@@ -507,6 +510,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4323682467768939016, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
+      propertyPath: teamID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4379114031988800453, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -550,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 6497394407002383236, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
       propertyPath: m_Name
       value: Elf
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005784084562264261, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
+      propertyPath: _playerNum
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9005784084562264261, guid: 4e83bc8848d3bbd4082aa11ab8d0386f, type: 3}
       propertyPath: _limitedMovement

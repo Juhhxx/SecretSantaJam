@@ -15,21 +15,33 @@ public class Shotgun : MonoBehaviour
 
     private Vector3 _mousePos;
     private Vector2 _shotDir;
+    private bool _useController = false;
 
     private void Start()
     {
         DoShot();
+
+        Actor actor = GetComponentInParent<Actor>();
+
+        _useController = actor.teamID == 1;
     }
 
     private void Update()
     {
-        _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        _mousePos.z = 0f;
+        if (!_useController)
+        {
+            _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            _mousePos.z = 0f;
 
-        Debug.Log(_mousePos);
-        Debug.DrawLine(_mousePos + Vector3.up, _mousePos + Vector3.down);
+            _shotDir = Vector3.Normalize(_mousePos - transform.position);
+        }
+        else
+        {
+            _shotDir.x = Input.GetAxis("AimX");
+            _shotDir.y = Input.GetAxis("AimY");
 
-        _shotDir = Vector3.Normalize(_mousePos - transform.position);
+            _shotDir = _shotDir.normalized;
+        }
 
         Debug.Log(_shotDir);
 
