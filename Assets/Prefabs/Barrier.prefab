@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 117225452184274722}
   - component: {fileID: 7177915570764601839}
   - component: {fileID: 7869570825987777387}
+  - component: {fileID: 2447724158384549006}
+  - component: {fileID: 5450677738882069714}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -137,3 +139,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2447724158384549006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027430414255694809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09682fecd30d0b24a9ff247e1b4fa1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LimitedLife
+  _turnLimit: 1
+  _turns: 3
+  _seconds: 0
+--- !u!114 &5450677738882069714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027430414255694809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc35ae04a90441a491bdd120204ef089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actor
+  initiative: -1
+  teamID: 3

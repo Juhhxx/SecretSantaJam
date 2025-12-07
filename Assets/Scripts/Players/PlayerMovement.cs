@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         _moveDelta.x = Input.GetAxis("Horizontal" + _playerNum);
         _moveDelta.y = Input.GetAxis("Vertical" + _playerNum);
 
-        if (_moveDelta.magnitude > 0) _currentDirection = (_moveDelta * 5).normalized;
+        if (_moveDelta.magnitude > 0) _currentDirection = _moveDelta.normalized;
     }
 
     public void SetTeam(int teamID)

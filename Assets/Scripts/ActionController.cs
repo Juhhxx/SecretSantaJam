@@ -19,7 +19,7 @@ public class ActionController : MonoBehaviour
     {
         foreach (ActionKey ak in _abilityKeys)
         {
-            if (Input.GetKeyDown(ak.Key)) ak.Ability.SpawnAbility(transform.position);
+            if (Input.GetKeyDown(ak.Key)) ak.Ability.SpawnAbility(gameObject);
         }
     }
 

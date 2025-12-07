@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TurnHPEffect : Actor
 {
@@ -17,10 +18,11 @@ public class TurnHPEffect : Actor
         base.StartTurn();
         
         var seq = LeanTween.sequence();
-        seq.append(0.6f);
+        seq.append(1.2f);
         seq.append(() =>
         {
-            transform.LeanScale(Vector3.one * 1.2f, 0.3f).setEasePunch();
+            transform.LeanScale(Vector3.one * 1.3f, 0.6f).setEasePunch();
+            transform.LeanRotateZ(Random.Range(-10, 10), 0.4f).setEasePunch();
             GiveDamage();
         });
 
@@ -49,7 +51,8 @@ public class TurnHPEffect : Actor
             }
         }
         
-        ps?.Play();
+        if (ps != null)
+            ps.Play();
     }
 
     private void OnDrawGizmos()
