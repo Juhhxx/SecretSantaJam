@@ -44,6 +44,7 @@ public class CameraController : MonoBehaviour
             return;
         }
 
+
         onTarget = false;
         Target = a.gameObject.transform;
         Vector2 targetPos = Target.position;
@@ -51,9 +52,11 @@ public class CameraController : MonoBehaviour
         {
             LeanTween.cancel(gameObject);
         }
-        transform.LeanMove(targetPos, _settings.CameraTurnFollowTime).
-            setEaseInCubic().
-            setEaseOutCubic()
-            .setOnComplete(() => onTarget = true);
+
+        var seq = LeanTween.sequence();
+        seq.append(0.4f);
+        seq.append(
+            transform.LeanMove(targetPos, _settings.CameraTurnFollowTime).setEaseInCubic().setEaseOutCubic()
+                .setOnComplete(() => onTarget = true));
     }
 }

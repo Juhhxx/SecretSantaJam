@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2746650857443906321}
   - component: {fileID: 5579065576477696744}
   - component: {fileID: 9105032381026871732}
+  - component: {fileID: 3096196725766416382}
   m_Layer: 0
   m_Name: Napalm
   m_TagString: Untagged
@@ -110,3 +111,18 @@ MonoBehaviour:
   _radius: 3.5
   _showRadius: 1
   ps: {fileID: 0}
+--- !u!114 &3096196725766416382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390808936542429360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09682fecd30d0b24a9ff247e1b4fa1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LimitedLife
+  _turnLimit: 1
+  _turns: 2
+  _seconds: 0

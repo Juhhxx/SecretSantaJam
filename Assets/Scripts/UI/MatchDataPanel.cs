@@ -47,6 +47,7 @@ public class MatchDataPanel : MonoBehaviour
 
     private void ChangeLabel(Actor a)
     {
+        if (a == null) return;
         _actorActions = a.GetComponent<Actions>();
         _actorLabel.text = a.name + $" (team ID {a.teamID})";
     }
