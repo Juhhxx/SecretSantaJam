@@ -25,6 +25,18 @@ public class ElfVisuals : MonoBehaviour
         _sprites = GetComponentsInChildren<SpriteRenderer>(true);
     }
 
+    private void Start()
+    {
+        RandomizeElf();
+    }
+
+    [Button()]
+    public void RandomizeElf()
+    {
+        _animator.SetFloat("Face", Random.Range(0f, 10f));
+        _animator.SetFloat("Ears", Random.Range(0f, 5f));
+    }
+
     private void OnEnable()
     {
         _health.OnHit += GetHit;
