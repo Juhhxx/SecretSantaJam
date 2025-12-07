@@ -28,6 +28,7 @@ namespace UI
         private void OnEnable()
         {
             _gameEvents.portraitGenerated += AddPortrait;
+            
         }
 
         private void OnDisable()
