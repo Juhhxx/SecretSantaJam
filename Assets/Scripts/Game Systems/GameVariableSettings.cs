@@ -12,10 +12,16 @@ public class GameVariableSettings : ScriptableObject
     public Action<float> currentSkipHoldTime;
     public TurnChange turnActorChange;
     public Action<Actor> combatCallout;
+    public Action<Actor, Texture2D> portraitGenerated;
 
     public void RaiseCombatCallout(Actor a)
     {
         combatCallout?.Invoke(a);
+    }
+
+    public void RaisePortraitGenerated(Actor actor, Texture2D portrait)
+    {
+        portraitGenerated?.Invoke(actor, portrait);
     }
     
     public void RaiseMovementUpdate(float accumulatedMovement)

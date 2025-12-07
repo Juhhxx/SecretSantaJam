@@ -17,10 +17,12 @@ public class ElfVisuals : MonoBehaviour
     private SpriteRenderer[] _sprites;
     private PlayerMovement _movement;
     private HealthSystem _health;
+    private Actor _actor;
     private static readonly int _movementHash = Animator.StringToHash("Movement");
 
     private void Awake()
     {
+        _actor = GetComponentInParent<Actor>();
         _health = GetComponentInParent<HealthSystem>();
         _movement = GetComponentInParent<PlayerMovement>();
         _sprites = GetComponentsInChildren<SpriteRenderer>(true);
@@ -28,12 +30,14 @@ public class ElfVisuals : MonoBehaviour
 
     private void Start()
     {
+        
         RandomizeElf();
     }
 
     [Button()]
     public void RandomizeElf()
     {
+        _animator.SetFloat("Team", _actor ? _actor.teamID : 0f);
         _animator.SetFloat("Face", Random.Range(0f, 10f));
         _animator.SetFloat("Ears", Random.Range(0f, 5f));
     }

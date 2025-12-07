@@ -8,6 +8,7 @@ public class MatchManager : MonoBehaviour
 {
     [SerializeField] private GameVariableSettings _gameSettings;
     [SerializeField] private bool _startOnAwake = true;
+    [SerializeField] private Camera _portraitCamera;
     private float _skipTurnTimer;
 
     private List<Actor> _pcs = new List<Actor>(); // playable chars
@@ -52,7 +53,10 @@ public class MatchManager : MonoBehaviour
         }
 
         TurnManager.instance.OrderByInitiative();
-        
+
+        yield return null;
+        GenerateElfPortraits();
+
         yield return new WaitForSeconds(0.6f);
         
         if (_startOnAwake)
@@ -111,11 +115,40 @@ public class MatchManager : MonoBehaviour
         _gameSettings.RaiseHoldTime(_skipTurnTimer);
     }
 
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
+    public void GenerateElfPortraits()
     {
-        Rect r = new Rect(0, 0, 100, 20);
-        GUI.Label(r, "Hold Jump button to skip turn");
+        if (_portraitCamera == null) return;
+        
+        Camera camera = GameObject.Instantiate(_portraitCamera);
+        Rect rect = new Rect(0, 0, 32, 32);
+        
+        // Create elf portraits
+        foreach (var actor in _pcs)
+        {
+            
+            RenderTexture rt = RenderTexture.GetTemporary(32, 32, 24);
+            camera.targetTexture = rt;
+            
+            Vector3 pos = actor.transform.position + Vector3.up * 0.5f;
+            camera.transform.position = new Vector3(pos.x, pos.y, -1f);
+            camera.Render();
+
+            RenderTexture.active = rt;
+            Texture2D portrait = new Texture2D(32, 32, TextureFormat.RGBA32, false);
+            portrait.filterMode = FilterMode.Point;
+            
+            portrait.ReadPixels(rect, 0, 0);
+            portrait.Apply();
+
+            _gameSettings.RaisePortraitGenerated(actor, portrait);
+            
+            camera.targetTexture = null;
+            RenderTexture.active = null;
+
+            rt = null;
+            Destroy(rt);
+        }
+        
+        Destroy(camera.gameObject);
     }
-#endif
 }

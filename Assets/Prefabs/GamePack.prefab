@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MatchManager
   _gameSettings: {fileID: 11400000, guid: fe379635d52acd147b9f5a5ddb5185aa, type: 2}
   _startOnAwake: 1
+  _portraitCamera: {fileID: 750541390105803590, guid: e4eed0ce11be9b640b2ea09cfcfe5cb3, type: 3}
