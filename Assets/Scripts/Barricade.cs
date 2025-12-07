@@ -10,9 +10,15 @@ public class Barricade : MonoBehaviour
     [SerializeField] private Transform _previewPivot;
     Vector3 _mousePos;
     Vector2 _wallDir;
+    private bool _useController;
+
     private void Start()
     {
         DoWallPrepare();
+
+        Actor actor = GetComponentInParent<Actor>();
+
+        _useController = actor.teamID == 1;
     }
     private void DoWallPrepare()
     {
@@ -20,12 +26,23 @@ public class Barricade : MonoBehaviour
         StartCoroutine(WallBuildCR());
         _previewPivot.localPosition = new Vector3(_distanceFromPlayer, 0 , 0);
     }
+
     private void Update()
     {
-        _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        _mousePos.z = 0f;
+        if (!_useController)
+        {
+            _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            _mousePos.z = 0f;
 
-        _wallDir = Vector3.Normalize(_mousePos - transform.position);
+            _wallDir = Vector3.Normalize(_mousePos - transform.position);
+        }
+        else
+        {
+            _wallDir.x = Input.GetAxis("AimX");
+            _wallDir.y = Input.GetAxis("AimY");
+
+            _wallDir = _wallDir.normalized;
+        }
 
         Vector3 angles = transform.rotation.eulerAngles;
 
@@ -43,7 +60,11 @@ public class Barricade : MonoBehaviour
     }
     private IEnumerator WallBuildCR()
     {
-        yield return new WaitUntil(() => Mouse.current.leftButton.wasPressedThisFrame);
+        if (_useController)
+            yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
+        else
+            yield return new WaitUntil(() => Input.GetButtonDown("Fire2"));
+
         BuildWall(_wallDir);
         yield return new WaitForEndOfFrame();
         Destroy(gameObject);

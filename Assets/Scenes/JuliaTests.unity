@@ -239,7 +239,8 @@ MonoBehaviour:
   _abilityKeys:
   - Key: 49
     Ability: {fileID: 11400000, guid: a3f2e2136643b86449b7af1e4cf4518c, type: 2}
-  _isActing: 1
+  - Key: 50
+    Ability: {fileID: 11400000, guid: d29a41f15377aa14b9b32f83cb8c06b1, type: 2}
 --- !u!1 &886545634
 GameObject:
   m_ObjectHideFlags: 0

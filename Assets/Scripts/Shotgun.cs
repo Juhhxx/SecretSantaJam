@@ -75,7 +75,10 @@ public class Shotgun : MonoBehaviour
 
     private IEnumerator ShootCR()
     {
-        yield return new WaitUntil(() => Mouse.current.leftButton.wasPressedThisFrame);
+        if (_useController)
+            yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
+        else
+            yield return new WaitUntil(() => Input.GetButtonDown("Fire2"));
 
         ShotSpread(_bulletPivot.position, _shotDir);
 
